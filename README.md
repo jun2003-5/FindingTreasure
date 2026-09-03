@@ -2,7 +2,7 @@
 
 > A touch-and-idle grinding game! Upgrade your pirate ship and search for your lost captain!
 
-A solo-developed touch-based idle RPG. I handled every stage of the project — design, development, and release — **entirely on my own**, using Unity and C#.
+A solo-developed touch-based idle game. I handled every stage of the project — design, development, and release — **entirely on my own**, using Unity and C#.
 
 ---
 
