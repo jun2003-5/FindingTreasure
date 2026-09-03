@@ -70,7 +70,7 @@ Made extensive changes to project settings to meet the file format and configura
 |---|---|
 | Platforms | Google Play Store, Apple App Store |
 | Post-launch | Continued updates based on user reviews and feedback after release |
-| Revenue | ₩170,700 (Google Play) / ₩3,178,773 (Apple App Store) |
+| Revenue | ₩170,700 (Google Play) / ₩4,155,174 (Apple App Store) |
 | Current status | Removed from both stores due to a policy change that took effect while the developer was serving mandatory military service; currently not listed on any storefront |
 
 > Note: The game runs and launches correctly from the Unity Editor.
