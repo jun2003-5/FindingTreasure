@@ -76,6 +76,19 @@ Google Play / App Store가 요구하는 파일 형식과 설정 기준에 맞추
 
 ---
 
+## 📸 스크린샷
+
+![메인 화면](screenshots/2.png)
+![기본 플레이 화면](screenshots/3.png)
+![재료 교환소](screenshots/1.png)
+![배 업그레이드 화면](screenshots/4.png)
+![재료가방 화면](screenshots/5.png)
+![뽑기 화면](screenshots/6.png)
+![보물 화면](screenshots/7.png)
+![상점 화면](screenshots/8.png)
+
+---
+
 ## 📩 Contact
 
 문의: kimjy5191112@gmail.com
