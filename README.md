@@ -1,4 +1,4 @@
-# 🏴‍☠️ Grow Your Ship: 40075 — The Lost Captain
+# 🏴‍☠️ Finding Treasure: 40075 — The Lost Captain
 
 > A touch-and-idle grinding game! Upgrade your pirate ship and search for your lost captain!
 
