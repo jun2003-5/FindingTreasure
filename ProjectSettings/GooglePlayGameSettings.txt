@@ -1,0 +1,8 @@
+lastUpgrade=01012
+proj.pluginVersion=0.10.12
+proj.AppId=453348888195
+and.BundleId=com.junsgame.pirateship
+proj.classDir=Assets
+proj.ConstantsClassName=GPGSIds
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--app_id--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e453348888195%3c%2fstring%3e%0d%0a++%3c%21--package_name--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.junsgame.pirateship%3c%2fstring%3e%0d%0a++%3c%21--achievement+Distance--%3e%0d%0a++%3cstring+name%3d%22achievement_distance%22+translatable%3d%22false%22%3eCgkIg53M7ZgNEAIQAw%3c%2fstring%3e%0d%0a++%3c%21--achievement+Speed--%3e%0d%0a++%3cstring+name%3d%22achievement_speed%22+translatable%3d%22false%22%3eCgkIg53M7ZgNEAIQBA%3c%2fstring%3e%0d%0a++%3c%21--achievement+PlayTime--%3e%0d%0a++%3cstring+name%3d%22achievement_playtime%22+translatable%3d%22false%22%3eCgkIg53M7ZgNEAIQBQ%3c%2fstring%3e%0d%0a++%3c%21--leaderboard+Distance--%3e%0d%0a++%3cstring+name%3d%22leaderboard_distance%22+translatable%3d%22false%22%3eCgkIg53M7ZgNEAIQBg%3c%2fstring%3e%0d%0a%3c%2fresources%3e
+and.ClientId=453348888195-dgdfmjckephnaa1o0k0j8jjphau31sle.apps.googleusercontent.com
