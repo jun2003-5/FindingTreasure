@@ -1,100 +1,101 @@
-# 🏴‍☠️ 배 키우기: 40075 사라진 선장
+# 🏴‍☠️ Grow Your Ship: 40075 — The Lost Captain
 
-> 터치 & 방치형 노가다 게임! 해적선을 업그레이드하여 사라진 선장을 찾아보자!
+> A touch-and-idle grinding game! Upgrade your pirate ship and search for your lost captain!
 
-개인 개발한 터치형 방치 RPG 게임입니다. Unity와 C#을 사용하여 기획부터 개발, 출시까지 전 과정을 **혼자** 진행했습니다.
-
----
-
-## 📖 게임 소개
-
-주인공은 배를 타고 항해하던 중 선장을 잃어버립니다. 사라진 선장을 찾기 위해 지구 한 바퀴 거리인 **40,075km**를 항해하며 재료를 모으고, 이를 바탕으로 배를 업그레이드해 더 좋은 배를 만들어가는 것이 게임의 핵심 루프입니다.
-
-- 터치를 통해 다양한 재료와 수집품 획득
-- 재료로 배를 업그레이드하여 더 빠르고 강한 배 제작
-- 뽑기, 교환소, 상점, 미니게임을 통한 재료 보충 시스템
-- 미스터리한 해적 선원들과 함께하는 항해 스토리
+A solo-developed touch-based idle RPG. I handled every stage of the project — design, development, and release — **entirely on my own**, using Unity and C#.
 
 ---
 
-## 🛠 사용 기술
+## 📖 About the Game
 
-- **엔진**: Unity
-- **언어**: C# (Visual Studio)
-- **저장 방식**: 로컬 저장 (클라우드/온라인 저장 미사용)
+The protagonist sets sail on a ship, only to lose their captain along the way. To find him, they must voyage **40,075 km** — roughly the circumference of the Earth — gathering materials and using them to upgrade the ship into something faster and stronger. This upgrade loop is the core of the game.
 
----
-
-## 🔧 주요 구현 시스템
-
-**실시간 자원 생산 & UI 동기화 시스템**
-0.1~1초 단위로 여러 종류의 재료가 동시에 각기 다른 속도로 누적되는 구조를 `Coroutine` 기반으로 설계했습니다. 재료 수량, 구매(소비), UI 표시가 모두 실시간으로 맞물려 동작해야 했기 때문에 — 유저가 아이템을 구매하면 즉시 재료가 차감되고, 동시에 진행 중이던 자원 생산 로직과 충돌 없이 UI 수치가 갱신되도록 데이터 흐름을 설계하는 것이 핵심 과제였습니다.
-
-**로컬 데이터 저장 & 복구 시스템**
-클라우드 서버 없이 기기 로컬에만 저장하는 구조로, 저장 시점과 실시간으로 변화하는 자원 데이터 간의 싱크가 맞지 않아 게임 진행이 초기화되는 버그가 반복 발생했습니다. 약 1개월간 원인을 추적하여 저장 로직을 재설계, 데이터 무결성을 보장하는 자체 저장/복구 시스템을 구축했습니다.
-
-**인앱 결제(IAP) 연동**
-Google Play / App Store 결제 API를 직접 연동. 공식 문서와 참고 자료가 부족한 상황에서 게임 내 재화 지급 로직과 결제 검증 흐름을 처음부터 설계 및 구현했습니다.
-
-**성능 최적화**
-`Update()` 메소드 호출을 최소화하는 구조로 설계하여 다수의 실시간 로직이 동시에 돌아가는 상황에서도 프레임 드랍과 렉을 방지했습니다.
+- Collect a wide variety of materials and collectibles through touch interactions
+- Use materials to upgrade the ship, making it faster and more powerful
+- Restock materials through a gacha system, exchange shop, store, and mini-games
+- A mysterious crew of pirates accompanies the voyage, driving the story forward
 
 ---
 
-## 👤 개발 배경 및 역할
+## 🛠 Tech Stack
 
-- **개발자**: 1인 개발 (기획, 프로그래밍, UI 전부 담당)
-- **개발 기간**: 약 6개월 (하루 평균 6~7시간 투자)
-- **개발 시작 계기**: '땅파기' 시뮬레이션 게임을 재미있게 플레이하다가, 비슷한 방치형 게임을 직접 만들어보고 싶어서 시작
-- **개발 시기**: 20살, AI 코딩 도구가 보편화되기 이전 시기. 유튜브 강의(골드메탈)와 구글링을 통해 물리엔진 및 기초 코딩을 독학하고, 이후 직접 코드를 작성하며 완성
+- **Engine**: Unity
+- **Language**: C# (Visual Studio)
+- **Save System**: Local device storage (no cloud/online save)
 
-### 겪었던 주요 기술적 문제와 해결
-
-**1. 성능 최적화**
-방치형 게임 특성상 여러 시스템(자원 생산, UI 갱신, 구매 처리)이 동시에 실시간으로 돌아가야 했기 때문에, `Update()` 메소드 호출을 최소화하는 구조로 설계해 프레임 드랍과 렉을 방지했습니다.
-
-**2. 로컬 데이터 저장 & 복구 시스템**
-클라우드 서버 없이 기기 로컬에만 데이터를 저장하는 구조로 구현하면서, 저장 시점과 실시간으로 변화하는 자원 데이터 간 싱크 오류로 인해 진행 상황이 초기화되는 버그가 반복 발생했습니다. 약 1개월간 원인을 추적한 끝에 저장 로직을 재설계하여 데이터 무결성을 보장하는 자체 저장/복구 시스템을 구축했습니다.
-
-**3. 실시간 자원 생산 & UI 동기화**
-재료가 0.1~1초 단위로 갱신되는 구조에서, `Coroutine`을 최소한으로 활용해 다수의 재화가 동시에 각기 다른 속도로 누적되도록 구현했습니다. 유저가 아이템을 구매하면 즉시 재료가 차감되고 동시에 진행 중이던 자원 생산 로직과 충돌 없이 UI가 갱신되도록 데이터 흐름을 설계하는 것이 핵심 과제였습니다.
-
-**4. 스토어 출시 준비 & 인앱 결제(IAP) 연동**
-Google Play / App Store가 요구하는 파일 형식과 설정 기준에 맞추기 위해 기존 설정을 대폭 수정했습니다. 특히 인앱 결제 API 연동 과정에서 게임마다 적용 방식이 달라 참고 자료가 부족했고, 재화 지급 로직과 결제 검증 흐름을 직접 시행착오를 거쳐 구현했습니다.
 ---
 
-## 🚀 출시 이력
+## 🔧 Key Systems Implemented
 
-| 항목 | 내용 |
+**Real-Time Resource Production & UI Synchronization**
+Designed a `Coroutine`-based system in which multiple material types accumulate simultaneously at different rates, updating every 0.1–1 seconds. Because material quantities, purchases (consumption), and UI display all had to stay in sync in real time, the core challenge was architecting the data flow so that when a player made a purchase, materials were deducted instantly and the UI updated correctly without conflicting with the resource-production logic running in parallel.
+
+**Local Data Save & Recovery System**
+With no cloud server and all data stored purely on-device, a sync mismatch between save timing and the constantly changing real-time resource data caused a recurring bug where player progress would reset. It took about a month of tracing the root cause before I redesigned the save logic and built a custom save/recovery system that guarantees data integrity.
+
+**In-App Purchase (IAP) Integration**
+Integrated the Google Play and App Store payment APIs directly. With limited official documentation and reference material available, I designed and implemented the in-game currency reward logic and payment verification flow from scratch.
+
+**Performance Optimization**
+Minimized `Update()` method calls throughout the codebase to prevent frame drops and lag, even with multiple real-time systems running concurrently.
+
+---
+
+## 👤 Background & Role
+
+- **Developer**: Solo developer — handled design, programming, and UI entirely on my own
+- **Development period**: ~6 months (averaging 6–7 hours per day)
+- **Motivation**: After enjoying a simulation game called *Grow a Bar*, I wanted to build a similar idle-style game of my own
+- **Timing**: Built at age 20, before AI coding tools were widely available. I self-taught the fundamentals of physics engines and coding through YouTube tutorials (GoldMetal) and general research, then wrote the rest of the code myself
+
+### Major Technical Problems & How I Solved Them
+
+**1. Performance Optimization**
+Because several systems (resource production, UI updates, purchase processing) had to run simultaneously in real time — a defining trait of idle games — I minimized `Update()` method calls to prevent frame drops and lag.
+
+**2. Local Data Save & Recovery System**
+Storing data purely on-device with no cloud backend led to a recurring bug where sync errors between save timing and constantly changing real-time resource data would reset player progress. After about a month of tracing the root cause, I redesigned the save logic and built a custom save/recovery system that guarantees data integrity.
+
+**3. Real-Time Resource Production & UI Sync**
+With materials updating every 0.1–1 seconds, I used `Coroutine`s sparingly to allow multiple currencies to accumulate simultaneously at different rates. The core challenge was designing the data flow so that a purchase would instantly deduct materials and update the UI without conflicting with the resource-production logic running in parallel.
+
+**4. Store Launch Preparation & IAP Integration**
+Made extensive changes to project settings to meet the file format and configuration requirements of Google Play and the App Store. In-app purchase integration in particular was difficult, since the implementation approach varies from game to game and reference material was scarce — I had to work through the currency-reward logic and payment verification flow largely through trial and error.
+
+---
+
+## 🚀 Release History
+
+| Item | Details |
 |---|---|
-| 출시 플랫폼 | Google Play Store, Apple App Store |
-| 서비스 방식 | 출시 후 사용자 리뷰 및 피드백 기반 지속 업데이트 |
-| 누적 수익 | Google Play 170,700원 / Apple App Store 3,178,773원 |
-| 현재 상태 | 개발자 군 복무 기간 중 스토어 정책 변경으로 출시 중단, 현재 스토어 미등록 |
+| Platforms | Google Play Store, Apple App Store |
+| Post-launch | Continued updates based on user reviews and feedback after release |
+| Revenue | ₩170,700 (Google Play) / ₩3,178,773 (Apple App Store) |
+| Current status | Removed from both stores due to a policy change that took effect while the developer was serving mandatory military service; currently not listed on any storefront |
 
-> ※ 게임 실행 자체에는 문제가 없으며, Unity 에디터를 통해 정상 구동을 확인했습니다.
+> Note: The game runs and launches correctly from the Unity Editor.
 
 ---
 
-## 📸 스크린샷
+## 📸 Screenshots
 
-![메인 화면](screenshots/2.png)
-![기본 플레이 화면](screenshots/3.png)
-![재료 교환소](screenshots/1.png)
-![배 업그레이드 화면](screenshots/4.png)
-![재료가방 화면](screenshots/5.png)
-![뽑기 화면](screenshots/6.png)
-![보물 화면](screenshots/7.png)
-![상점 화면](screenshots/8.png)
+![Main Screen](screenshots/2.png)
+![Core Gameplay Screen](screenshots/3.png)
+![Material Exchange](screenshots/1.png)
+![Ship Upgrade Screen](screenshots/4.png)
+![Material Inventory](screenshots/5.png)
+![Gacha Screen](screenshots/6.png)
+![Treasure Screen](screenshots/7.png)
+![Shop Screen](screenshots/8.png)
 
 ---
 
 ## 📩 Contact
 
-문의: kimjy5191112@gmail.com
+kimjy5191112@gmail.com
 
 ---
 
 ## ⚠️ Notice
 
-이 저장소는 포트폴리오 목적으로 게임 개발 이력을 공유하기 위해 업로드되었습니다. 실제 서명 키(keystore), API 키 등 민감 정보는 포함되어 있지 않습니다.
+This repository is shared for portfolio purposes to document my game development experience. No signing keys (keystores), API keys, or other sensitive credentials are included.
